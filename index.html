@@ -26,7 +26,6 @@
             scroll-behavior: smooth;
         }
 
-        /* SECTION 1: PORTADA */
         #intro {
             width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
             background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%);
@@ -39,12 +38,9 @@
             cursor: pointer;
             transition: transform 0.2s;
         }
-        .preview-card:active {
-            transform: scale(0.95) rotate(0deg);
-        }
+        .preview-card:active { transform: scale(0.95) rotate(0deg); }
         .preview-card img { width: 100%; border-radius: 12px; display: block; }
 
-        /* MAIN APP */
         #app { display: none; width: 100%; opacity: 0; transition: opacity 1s; }
 
         .hero-beach {
@@ -57,36 +53,20 @@
             justify-content: center;
         }
         
-        /* NEW OVERLAY TEXT */
         .text-girafita {
-            position: absolute;
-            top: 22%;
-            left: 5%;
-            font-family: 'Fredoka', sans-serif;
-            font-size: clamp(3.5rem, 12vw, 6rem);
-            color: white;
-            text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
-            transform: rotate(-4deg);
-            z-index: 10;
+            position: absolute; top: 22%; left: 5%;
+            font-family: 'Fredoka', sans-serif; font-size: clamp(3.5rem, 12vw, 6rem);
+            color: white; text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
+            transform: rotate(-4deg); z-index: 10;
         }
         
         .text-22 {
-            position: absolute;
-            top: 45%;
-            right: 8%;
-            font-family: 'Fredoka', sans-serif;
-            font-size: clamp(4rem, 15vw, 7rem);
-            color: white;
-            text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
-            transform: rotate(3deg);
-            z-index: 10;
-            text-align: center;
-            line-height: 1;
+            position: absolute; top: 45%; right: 8%;
+            font-family: 'Fredoka', sans-serif; font-size: clamp(4rem, 15vw, 7rem);
+            color: white; text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
+            transform: rotate(3deg); z-index: 10; text-align: center; line-height: 1;
         }
-        .text-22 span {
-            font-size: 0.6em;
-            display: block;
-        }
+        .text-22 span { font-size: 0.6em; display: block; }
 
         .scroll-hint {
             position: absolute; bottom: 30px; color: white; font-size: 24px;
@@ -94,9 +74,7 @@
         }
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
 
-        .letter-section {
-            padding: 60px 20px; background: #fdf2f2; display: flex; flex-direction: column; align-items: center;
-        }
+        .letter-section { padding: 60px 20px; background: #fdf2f2; display: flex; flex-direction: column; align-items: center; }
 
         .glass-card {
             background: var(--glass); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
@@ -105,9 +83,7 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.05); text-align: center;
         }
 
-        .photo-section {
-            padding: 80px 20px; display: flex; flex-direction: column; align-items: center; background: white;
-        }
+        .photo-section { padding: 80px 20px; display: flex; flex-direction: column; align-items: center; background: white; }
 
         .polaroid {
             background: white; padding: 15px 15px 60px 15px; box-shadow: 0 30px 60px rgba(0,0,0,0.15);
@@ -121,13 +97,9 @@
             border-radius: 50px; font-family: 'Fredoka', sans-serif; font-size: 18px;
             margin-top: 30px; cursor: pointer;
         }
-
-        .mute-btn { position: fixed; top: 20px; right: 20px; z-index: 2000; background: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-size: 22px; cursor: pointer; }
     </style>
 </head>
 <body>
-
-    <div class="mute-btn" id="mute">🔊</div>
 
     <div id="intro">
         <h2 style="color: white; font-family: 'Fredoka'; margin-bottom: 30px; text-align: center;">¡Felicidades Laura!<br>Toca la caja para abrir 🎁</h2>
@@ -140,7 +112,6 @@
         <div class="hero-beach">
             <div class="text-girafita">Girafita</div>
             <div class="text-22">22<br><span>AÑOS</span></div>
-            
             <div class="scroll-hint">▼ Baja para leer ▼</div>
         </div>
 
@@ -211,13 +182,6 @@
 
         document.getElementById('btnGoPhoto').addEventListener('click', () => {
             document.getElementById('photoSec').scrollIntoView({ behavior: 'smooth' });
-        });
-
-        let isMuted = false;
-        document.getElementById('mute').addEventListener('click', () => {
-            isMuted = !isMuted;
-            music.muted = isMuted;
-            document.getElementById('mute').innerText = isMuted ? '🔇' : '🔊';
         });
     </script>
 </body>
